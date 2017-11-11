@@ -1,0 +1,37 @@
+<h1>TO DO LIST</h1>
+<p class="line">/////////////////</p>
+
+<% if @user != current_user %>
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Assigned</th>
+    <th>Status</th>
+    <th>Edit</th>
+    <th>Remove</th>
+  </tr>
+ 
+  <% @chores.each do |chore| %>
+    <tr>
+      <% if chore.user == current_user %>
+      <td class="lefty"><%= chore.task %></td>
+      <td><%= chore.created_at.strftime("%m/%d/%y") %></td>
+      <td class="incomplete">Incomplete</td>
+      <td><%= link_to 'Edit', edit_chore_path(chore) %></td>
+      <td><%= link_to '[X]', chore_path(chore),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<div id="add_task"><%= link_to 'ADD TASK', new_chore_path %></div>
+
+<% else %>
+
+<div id="add_task">
+  <%= link_to "JOIN", new_user_registration_path %>
+</div>
+
+<% end %>

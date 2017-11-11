@@ -1,0 +1,210 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html {
+	padding: 0;
+	margin: 0;
+	font-family: 'Space Mono', monospace;
+	line-height: 1.4em;
+}
+
+h1, h2 {
+	text-align: center;
+	letter-spacing: 2px;
+	margin-bottom: 0;
+}
+
+p {
+	text-align: center;
+	margin-top: 1em;
+	padding: 0;
+	font-size: 0.8em;
+	color: LightGrey;
+}
+
+table, form {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+td {
+	padding: 10px;
+	transition: 0.4s
+}
+
+td:hover {
+	background-color: #DCDCDC;
+	color: black;
+}
+
+tr:nth-child(even) {
+	background-color: AliceBlue;
+}
+
+a {
+	text-decoration: none;
+	color: Gray;
+	transition: 0.3s;
+}
+
+a:hover {
+	color: SteelBlue;
+}
+
+input {
+	font-family: 'Space Mono', monospace;
+	letter-spacing: 1px;
+	line-height: 1.4em;
+	font-size: 0.8em;
+}
+
+#container {
+	margin: 0 auto;
+	width: 60%;
+	padding: 0;
+}
+
+ #add_task {
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	margin-top: 2em;
+ }
+
+ #add_task a {
+ 	color: Grey;
+ 	padding: 0 0.5em;
+ 	transition: 0.2s ease-in-out;
+ 	width: 7em;
+ 	border-left: 2px solid LightGrey;
+ 	border-right: 2px solid LightGrey;
+ }
+
+  #add_task a:hover {
+ 	color: SteelBlue;
+ 	/*background-color: AliceBlue;*/
+ 	padding: 0 1em;
+ 	border-left: 3px solid SteelBlue;
+ 	border-right: 3px solid SteelBlue;
+ }
+
+ #_back {
+ 	text-align: center;
+ 	margin-top: 5em;
+ 	font-size: 0.8em;
+ }
+
+ #fform {
+ 	color: black;
+ 	font-size: 1.2em;
+ }
+
+ #log_in {
+ 	font-size: 0.7em;
+ 	margin: 0;
+ 	text-align: right;
+ }
+
+ #log_in li {
+ 	display: inline;
+ 	list-style-type: none;
+ 	transition: 0.3s;
+ }
+
+ #log_in li:hover {
+ 	background-color: AliceBlue;
+ }
+
+#forget {
+	text-align: center;
+	font-size: 0.8em;
+	margin: 0;
+	padding: 0;
+}
+
+#remember {
+	font-size: 0.8em;
+	color: Grey;
+	margin: 0 auto;
+	width: 50%;
+	margin-bottom: 3em;
+	letter-spacing: 1px;
+}
+
+#forget {
+	font-size: 0.8em;
+	letter-spacing: 1px;
+}
+
+ .incomplete {
+ 	color: white;
+ 	background-color: red;
+ }
+
+ .complete {
+ 	color: white;
+ 	background-color: green;
+ 	text-align: center;
+ }
+
+ .line {
+ 	margin-bottom: 3em;
+ }
+
+ .lefty {
+ 	text-align: left;
+ 	border-left: solid 3px white;
+ }
+
+ .lefty:hover {
+ 	border-left: solid 3px SteelBlue;
+ }
+
+ .field {
+ 	margin-bottom: 10px;
+ }
+
+ .field input {
+ 	width: 20em;
+ 	height: 3em;
+ 	background-color: AliceBlue;
+ 	border: none;
+ 	outline: none;
+ 	padding-left: 1em;
+ 	margin-left: 3px;
+ }
+
+ .field input:focus {
+ 	border-left: 3px solid SteelBlue;
+ 	margin-left: 0px;
+ }
+
+ input[type=button], input[type=submit], input[type=reset] {
+    background-color: LightGrey;
+    border: none;
+    color: black;
+    padding: 0em 1em;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 3em;
+    width: 7em;
+}
+
+ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+ 	background-color: SteelBlue;
+ 	color: AliceBlue;
+ }
