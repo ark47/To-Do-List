@@ -148,6 +148,28 @@ input {
 	letter-spacing: 1px;
 }
 
+#error_explanation {
+	font-size: 0.8em;
+}
+
+#error_explanation ul {
+	text-align: center;
+	padding: 0;
+}
+
+#error_explanation li {
+	list-style-type: none;
+	letter-spacing: 1px;
+	color: SteelBlue;
+	margin: 0 auto;
+	padding: 0.5em;
+	text-transform: uppercase;
+}
+
+.field_with_errors {
+	display: inline;
+}
+
  .incomplete {
  	color: white;
  	background-color: red;
