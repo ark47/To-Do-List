@@ -16,6 +16,8 @@
 
 $(document).ready(function() {
 
+	$('#appender').hide();
+
 	//STATUS CHANGE
     $(".incomplete").click(function() {
     	$(this).removeClass('incomplete')

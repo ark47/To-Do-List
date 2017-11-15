@@ -13,24 +13,31 @@
  
   <% @chores.each do |chore| %>
     <tr>
+      
       <% if chore.user == current_user %>
       <td class="lefty"><%= chore.task %></td>
       <td><%= chore.created_at.strftime("%m/%d/%y") %></td>
+      
+      <% if chore.status == 'complete' %>
+      <td class="complete">Complete</td>
+      <% else %>
       <td class="incomplete">Incomplete</td>
-      <td><%= link_to 'Edit', edit_chore_path(chore) %></td>
-      <td><%= link_to '[X]', chore_path(chore),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      
+      <td><%= link_to 'Edit', edit_chore_path(chore), :remote => true %></td>
+      <td><%= link_to '[X]', chore_path(chore), method: :delete, :remote => true, :class => 'delete_task' %></td>
       <% end %>
     </tr>
   <% end %>
 </table>
 
-<div id="add_task"><%= link_to 'ADD TASK', new_chore_path %></div>
+<div id="add_task"><%= link_to 'ADD TASK', new_chore_path, :remote => true %></div>
+
+<div id="appender"></div>
 
 <% else %>
 
-<div id="add_task">
+<div id="join_button">
   <%= link_to "JOIN", new_user_registration_path %>
 </div>
 

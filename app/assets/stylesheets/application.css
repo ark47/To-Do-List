@@ -77,13 +77,13 @@ input {
 	padding: 0;
 }
 
- #add_task {
+ #add_task, #join_button {
  	text-align: center;
  	margin: 0 auto;
  	margin-top: 2em;
  }
 
- #add_task a {
+ #add_task a, #join_button a {
  	color: Grey;
  	padding: 0 0.5em;
  	transition: 0.2s ease-in-out;
@@ -93,6 +93,14 @@ input {
  }
 
   #add_task a:hover {
+ 	color: SteelBlue;
+ 	/*background-color: AliceBlue;*/
+ 	padding: 0 1em;
+ 	border-left: 3px solid SteelBlue;
+ 	border-right: 3px solid SteelBlue;
+ }
+
+ #join_button a:hover {
  	color: SteelBlue;
  	/*background-color: AliceBlue;*/
  	padding: 0 1em;
@@ -123,7 +131,7 @@ input {
  	transition: 0.3s;
  }
 
- #log_in li:hover {
+ #log_in li a:hover {
  	background-color: AliceBlue;
  }
 
@@ -164,6 +172,10 @@ input {
 	margin: 0 auto;
 	padding: 0.5em;
 	text-transform: uppercase;
+}
+
+#appender {
+	margin-top: 2em;
 }
 
 .field_with_errors {
@@ -211,6 +223,11 @@ input {
  .field input:focus {
  	border-left: 3px solid SteelBlue;
  	margin-left: 0px;
+ }
+
+ ._user {
+ 	text-transform: uppercase;
+ 	color: black;
  }
 
  input[type=button], input[type=submit], input[type=reset] {

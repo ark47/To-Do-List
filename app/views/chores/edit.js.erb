@@ -1,0 +1,6 @@
+$('#appender').html('');
+$('#appender').append("<%= j (render 'form') %>");
+$('#add_task').hide();
+$('#appender').fadeIn('slow');
+
+$(this).closest('tr').append("<%= j (render 'form') %>");

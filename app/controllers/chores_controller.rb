@@ -1,6 +1,7 @@
 class ChoresController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show]
+	respond_to :html, :js
 
 	def index
 		@chores = Chore.all
@@ -23,8 +24,11 @@ class ChoresController < ApplicationController
 		#@chore = Chore.new(chore_params)
 		@chore = current_user.chores.build(chore_params)
 
-		if @chore.save
-			redirect_to '/chores'
+		if @chore.save(chore_params)
+			respond_to do |format|
+				format.html { redirect_to chores_path }
+				# format.js { render :layout => false }
+			end
 		else
 			render 'new'
 		end
@@ -34,7 +38,9 @@ class ChoresController < ApplicationController
 		@chore = Chore.find(params[:id])
 
 		if @chore.update(chore_params)
-			redirect_to '/chores'
+			respond_to do |format|
+				format.html { redirect_to chores_path }
+			end
 		else
 			render 'edit'
 		end
@@ -44,7 +50,11 @@ class ChoresController < ApplicationController
 		@chore = Chore.find(params[:id])
 		@chore.destroy
 
-		redirect_to chores_path
+		#redirect_to chores_path
+		respond_to do |format|
+			format.html { redirect_to chore_path }
+			format.js { render :layout => false }
+		end
 	end
 
 	private
